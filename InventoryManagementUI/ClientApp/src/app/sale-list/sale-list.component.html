@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="mt-3">Sales List</h1>
+  <!--<div class="d-flex justify-content-end mt-3">
+    <a [routerLink]="['/add-product']" class="btn btn-primary"> Add Product</a>
+  </div>-->
+
+  <p *ngIf="isLoading && !isError"><em>Loading...</em></p>
+
+  <h3 *ngIf="isError" class="text-center text-danger">Error to fetch Data</h3>
+  <h3 *ngIf="!isLoading && !isError  && sales.length<=0" class="text-center text-danger">No Records found</h3>
+
+
+
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="sales.length && !isError">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Sale Date</th>
+        <th>Quantity Sold</th>
+        <th>Total Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sales">
+        <td>{{ s.product?.name }}</td>
+        <td>{{ s.saleDate }}</td>
+        <td>{{ s.quantity }}</td>
+        <td>{{ s.totalAmount }}</td>       
+      </tr>
+    </tbody>
+  </table>
+
+</div>
