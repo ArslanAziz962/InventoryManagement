@@ -1,6 +1,6 @@
 # InventoryManagement
 # First to create databas
-  goto -> Repository-> Content -> DatabaseContext.cs
+  goto -> Repository-> Context -> DatabaseContext.cs
       change connection string accordingly
       
   open package manager console, by going to tools-> nuget package manager->package mangaer console  and run command update-database.
